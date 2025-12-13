@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title> Group 2– Trang Web Hoàn Chỉnh</title>
+
+<style>
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.section-title {
+    margin: 40px 0 15px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #b8860b;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    border-top: 5px solid #d4af37;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.card-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Ảnh hiệu ứng */
+.card img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #d4af37;
+    opacity: 0;
+    max-height: 0;
+    transition: 0.5s ease;
+}
+
+.card.show img {
+    opacity: 1;
+    max-height: 200px;
+}
+
+/* MEDIA */
+.media-box {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.back-top {
+    display: block;
+    text-align: center;
+    margin: 40px auto;
+    padding: 12px;
+    background: #d4af37;
+    color: white;
+    font-size: 20px;
+    width: 220px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back-top:hover {
+    background: #b8860b;
+}
+</style>
+</head>
+
+<body id="top">
+
+<h1>DANH SÁCH THÀNH VIÊN – Group 2</h1>
+
+<!-- DÃY BÀN 1 -->
+<div class="section-title">Dãy bàn 1</div>
+<div class="grid">
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Võ Thị Lam Băng</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/f303fb29dbf56773659a97013e447e037f75f76b/IMG_0784.jpeg">
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Nguyễn Thảo Trinh</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/f303fb29dbf56773659a97013e447e037f75f76b/IMG_0786.jpeg">
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Phạm Nguyễn Kim Thơ</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/68aefd6543e36aa1cb727d86a45a225a99fe7f59/IMG_0789.jpeg">
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Trần Nam</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/1c6467fb6f7ebc6f1d0fe6177d343409a1a09aa8/IMG_0792.jpeg">
+    </div>
+</div>
+
+<!-- DÃY BÀN 2 -->
+<div class="section-title">Dãy bàn 2</div>
+<div class="grid">
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Trần Công Thành</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/b95fb196e9fce0c4e77ea520d8b539e74f1401d7/IMG_0805.jpeg">
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Nguyễn Lê Phương Anh</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/f6e441c66f2bfd8e7578833b2f728ad1de9edb56/IMG_0795.jpeg">
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Võ Nguyễn Ánh Như</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/f6e441c66f2bfd8e7578833b2f728ad1de9edb56/IMG_0794.jpeg">
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Phan Thị Thuý Vân</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/f6e441c66f2bfd8e7578833b2f728ad1de9edb56/IMG_0793.jpeg">
+    </div>
+</div>
+
+<!-- DÃY BÀN 3 -->
+<div class="section-title">Dãy bàn 3</div>
+<div class="grid">
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Phạm Minh Tín</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/9756b28e8fe8894a466884cf40f551be8e2f5f18/IMG_0797.jpeg">
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Châu Nguyễn Như Ngọc</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/9756b28e8fe8894a466884cf40f551be8e2f5f18/1HLDFGNJQ_8K8TR8.jpeg">
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Phạm Thị Anh Thư</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/10995234c17999847e306bffc482bc00144007d2/IMG_0798.jpeg">
+    </div>
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Trần Nguyễn Trường Đông</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/10995234c17999847e306bffc482bc00144007d2/IMG_0796.jpeg">
+    </div>
+</div>
+
+<hr>
+
+<!-- ẢNH TẬP THỂ -->
+<h2>ẢNH TẬP THỂ Group 2 </h2>
+<div class="media-box">
+    <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/dd884aa56d2f8e0bc8b076e1811c49beeb14df7b/IMG_0811.jpeg"width="400" height="300"
+         style="border-radius:10px; border:4px solid #d4af37;">
+</div>
+
+<!-- VIDEO HOẠT ĐỘNG -->
+<h2>Video hoạt động của nhóm</h2>
+<div style="text-align:center;">
+  <video width="640" controls style="border-radius:12px;">
+    <source src="https://raw.githubusercontent.com/nhungoc00/to1-web/14dcb7d375f8cc82e5bf4cb533636b6071ce2944/1JCBPQ7L2_8K8TR8.mp4">
+  </video>
+</div>
+<!-- VIDEO LINK (ĐÃ THAY ĐÚNG LINK BẠN GỬI) -->
+<h2>Video truyền động lực</h2>
+<div class="media-box">
+    <iframe width="400" height="300"
+            src="https://www.youtube.com/embed/lc_ecS1NpdA"
+            style="border-radius:10px; border:4px solid #d4af37;"
+            allowfullscreen>
+    </iframe>
+</div>
+
+<!-- IFRAME -->
+<h2>Khung nội tuyến – Trang web bất kỳ</h2>
+<div class="media-box">
+    <iframe width="600" height="500"
+            src="https://www.wikipedia.org"
+            style="border-radius:12px; border:5px solid #b8860b;"></iframe>
+</div>
+
+<a href="#top" class="back-top">Quay về đầu trang</a>
+
+<script>
+function toggleCard(card) {
+    card.classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
