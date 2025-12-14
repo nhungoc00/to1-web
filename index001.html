@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Group 2 – Trang Web Hoàn Chỉnh</title>
+
+<style>
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+    margin: 0;
+    padding: 20px;
+}
+
+/* ===== ẢNH BÌA ===== */
+.hero {
+    height: 320px;
+    background-image: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4");
+    background-size: cover;
+    background-position: center;
+    border-radius: 18px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    animation: zoomHero 10s infinite alternate ease-in-out;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    animation: fadeDown 1.5s ease;
+}
+
+.hero-content h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+}
+
+/* ===== HIỆU ỨNG ===== */
+@keyframes zoomHero {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.section-title {
+    margin: 40px 0 15px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #b8860b;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    border-top: 5px solid #d4af37;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.card-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-date {
+    font-size: 14px;
+    color: #777;
+    margin-top: 4px;
+}
+
+.card img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #d4af37;
+    margin-top: 10px;
+    opacity: 0;
+    max-height: 0;
+    transition: 0.5s ease;
+}
+
+.card.show img {
+    opacity: 1;
+    max-height: 200px;
+}
+
+/* MEDIA */
+.media-box {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.back-top {
+    display: block;
+    text-align: center;
+    margin: 40px auto;
+    padding: 12px;
+    background: #d4af37;
+    color: white;
+    font-size: 20px;
+    width: 220px;
+    border-radius: 12px;
+    text-decoration: none;
+}
+.back-top:hover {
+    background: #b8860b;
+}
+</style>
+</head>
+
+<body id="top">
+
+<!-- ẢNH BÌA -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>GROUP 2 💕</h1>
+        <p>Tuổi học trò – Cùng nhau cố gắng mỗi ngày 🌱</p>
+    </div>
+</div>
+
+<h1>DANH SÁCH THÀNH VIÊN</h1>
+
+<!-- DÃY BÀN 1 -->
+<div class="section-title">Dãy bàn 1</div>
+<div class="grid">
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Võ Thị Lam Băng</div>
+        <div class="card-date">16-04-2008</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/f303fb29dbf56773659a97013e447e037f75f76b/IMG_0784.jpeg">
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Nguyễn Thảo Trinh</div>
+        <div class="card-date">15-03-2008</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/f303fb29dbf56773659a97013e447e037f75f76b/IMG_0786.jpeg">
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Phạm Nguyễn Kim Thơ</div>
+        <div class="card-date">12-08-2008</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/68aefd6543e36aa1cb727d86a45a225a99fe7f59/IMG_0789.jpeg">
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+        <div class="card-name">Trần Nam</div>
+        <div class="card-date">19-09-2008</div>
+        <img src="https://raw.githubusercontent.com/nhungoc00/to1-web/1c6467fb6f7ebc6f1d0fe6177d343409a1a09aa8/IMG_0792.jpeg">
+    </div>
+</div>
+
+<!-- BACK -->
+<a href="#top" class="back-top">Quay về đầu trang</a>
+
+<script>
+function toggleCard(card) {
+    card.classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
